@@ -15,4 +15,4 @@ calculateAndPrintScore (Just rolls) = printScore $ score rolls
 
 printScore :: Maybe Int -> IO()
 printScore Nothing = putStrLn "SOMETHING ABOUT THE ROLLS YOU ENTERED WENT WRONG"
-printScore (Just score) = putStrLn ("YOU SCORED " ++ show score)
+printScore (Just yourScore) = putStrLn ("YOU SCORED " ++ show yourScore)

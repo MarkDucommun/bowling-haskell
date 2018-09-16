@@ -4,6 +4,8 @@ module InputLib(
   , parseString
 ) where
 
+import Maybe
+
 parseInput :: String -> Maybe [Int]
 parseInput string = parseInputInner (splitOnSpaces string) []
 
@@ -22,7 +24,7 @@ splitInner char (x:xs) array accumulator =
   if x == char
   then splitInner char xs (array ++ [accumulator]) ""
   else splitInner char xs array $ accumulator ++ [x]
-splitInner char [] array accumulator = array ++ [accumulator]
+splitInner _ [] array accumulator = array ++ [accumulator]
 
 parseString :: String -> Maybe Int
 parseString (x:[]) = parseChar x
@@ -33,7 +35,7 @@ parseString (x:y:[]) =
       aybe
         (parseChar y)
         (\secondCharValue -> Just (firstCharValue * 10 + secondCharValue)))
-parseString anythingElse = Nothing
+parseString _ = Nothing
 
 parseChar :: Char -> Maybe Int
 parseChar '0' = Just 0
@@ -47,7 +49,3 @@ parseChar '7' = Just 7
 parseChar '8' = Just 8
 parseChar '9' = Just 9
 parseChar _ = Nothing
-
-aybe :: Maybe a -> (a -> Maybe b) -> Maybe b
-aybe Nothing _ = Nothing
-aybe (Just a) fn = fn a

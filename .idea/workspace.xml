@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c894d49-2bbe-4714-b898-d085dbd30609" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FrameLib.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameLib.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InputLib.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/GameSpec.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/InputSpec.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/LibSpec.hs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Maybe.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Main.hs" beforeDir="false" afterPath="$PROJECT_DIR$/app/Main.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bowling-haskell/Lib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bowling-haskell/Lib.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bowling-haskell/Main.hs" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bowling-haskell/Main.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/bowling-haskell/Spec.hs" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/bowling-haskell/Spec.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lib.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Spec.hs" beforeDir="false" afterPath="$PROJECT_DIR$/test/Spec.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bowling-haskell/GameLib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bowling-haskell/GameLib.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bowling-haskell/InputLib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bowling-haskell/InputLib.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameLib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLib.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputLib.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputLib.hs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.stack-work/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,18 +30,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="hs" value="4103" />
+          <entry key="hs" value="4142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Haskell file" value="4103" />
+          <entry key="Haskell file" value="4142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="hs" value="13" />
+          <entry key="hs" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -55,7 +49,7 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Haskell file" value="13" />
+          <entry key="Haskell file" value="16" />
         </counts>
       </usages-collector>
     </session>
@@ -71,29 +65,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Main.hs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/InputLib.hs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/InputSpec.hs">
+        <entry file="file://$PROJECT_DIR$/src/GameLib.hs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="180">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FrameLib.hs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -125,13 +119,14 @@
         <option value="$PROJECT_DIR$/src/Frame.hs" />
         <option value="$PROJECT_DIR$/src/FrameLib.hs" />
         <option value="$PROJECT_DIR$/src/Lib.hs" />
-        <option value="$PROJECT_DIR$/src/GameLib.hs" />
         <option value="$PROJECT_DIR$/test/GameSpec.hs" />
         <option value="$PROJECT_DIR$/test/LibSpec.hs" />
         <option value="$PROJECT_DIR$/test/Spec.hs" />
-        <option value="$PROJECT_DIR$/app/Main.hs" />
         <option value="$PROJECT_DIR$/test/InputSpec.hs" />
+        <option value="$PROJECT_DIR$/src/Maybe.hs" />
         <option value="$PROJECT_DIR$/src/InputLib.hs" />
+        <option value="$PROJECT_DIR$/src/GameLib.hs" />
+        <option value="$PROJECT_DIR$/app/Main.hs" />
       </list>
     </option>
   </component>
@@ -185,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537130141153" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537130581148" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -257,12 +252,12 @@
       <workItem from="1537041618328" duration="379000" />
       <workItem from="1537042462397" duration="200000" />
       <workItem from="1537042925908" duration="1297000" />
-      <workItem from="1537045856331" duration="13053000" />
+      <workItem from="1537045856331" duration="13457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41034000" />
+    <option name="totallyTimeSpent" value="41438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -347,17 +342,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrameLib.hs">
+    <entry file="file://$PROJECT_DIR$/src/Maybe.hs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameLib.hs">
+    <entry file="file://$PROJECT_DIR$/src/InputLib.hs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="40" selection-start-line="40" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -368,10 +363,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Main.hs">
+    <entry file="file://$PROJECT_DIR$/src/GameLib.hs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrameLib.hs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -382,10 +384,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InputLib.hs">
+    <entry file="file://$PROJECT_DIR$/app/Main.hs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
         </state>
       </provider>
     </entry>

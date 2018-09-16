@@ -4,6 +4,8 @@ module InputLib(
   , parseString
 ) where
 
+import Maybe
+
 parseInput :: String -> Maybe [Int]
 parseInput string = parseInputInner (splitOnSpaces string) []
 
@@ -47,7 +49,3 @@ parseChar '7' = Just 7
 parseChar '8' = Just 8
 parseChar '9' = Just 9
 parseChar _ = Nothing
-
-aybe :: Maybe a -> (a -> Maybe b) -> Maybe b
-aybe Nothing _ = Nothing
-aybe (Just a) fn = fn a

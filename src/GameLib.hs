@@ -7,6 +7,7 @@ module GameLib(
 ) where
 
 import FrameLib
+import Maybe
 
 type GameLength = Int
 data Game = Game (Maybe Frames) LastFrame deriving (Show, Eq)
@@ -37,7 +38,3 @@ lastFrameToGame frame = aybe frame $ \last -> Just $ Game Nothing last
 
 framesAndMaybeLastFrameToGame :: Frames -> Maybe LastFrame -> Maybe Game
 framesAndMaybeLastFrameToGame frames lastFrame = aybe lastFrame (\last -> Just (Game (Just frames) last))
-
-aybe :: Maybe a -> (a -> Maybe b) -> Maybe b
-aybe Nothing _ = Nothing
-aybe (Just a) fn = fn a
