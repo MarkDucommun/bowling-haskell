@@ -33,9 +33,11 @@ constructNonLastFrame (x:y:rolls) len frames =
   else constructNormalGame rolls len $ frames ++ [NormalFrame x y]
 
 lastFrameToGame :: Maybe LastFrame -> Maybe Game
-lastFrameToGame frame = frame >>= \last -> Just $ Game Nothing last
+lastFrameToGame maybeLastFrame = do
+  lastFrame <- maybeLastFrame
+  Just $ Game Nothing lastFrame
 
 framesAndMaybeLastFrameToGame :: Frames -> Maybe LastFrame -> Maybe Game
-framesAndMaybeLastFrameToGame frames lastFrame = lastFrame >>= \last -> Just (Game (Just frames) last)
---framesAndMaybeLastFrameToGame frames lastFrame = do
---lastFrame >>= \last -> Just (Game (Just frames) last)
+framesAndMaybeLastFrameToGame frames maybeLastFrame = do
+  lastFrame <- maybeLastFrame
+  Just $ Game (Just frames) lastFrame

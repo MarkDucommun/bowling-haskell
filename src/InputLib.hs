@@ -4,8 +4,6 @@ module InputLib(
   , parseString
 ) where
 
-import Maybe
-
 parseInput :: String -> Maybe [Int]
 parseInput string = parseInputInner (splitOnSpaces string) []
 
