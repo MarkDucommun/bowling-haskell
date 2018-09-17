@@ -11,7 +11,9 @@ parseInput string = parseInputInner (splitOnSpaces string) []
 
 parseInputInner :: [String] -> [Int] -> Maybe [Int]
 parseInputInner [] ints = Just ints
-parseInputInner (x:xs) ints = parseString x >>= \int -> parseInputInner xs (ints ++ [int])
+parseInputInner (x:xs) ints = do
+  int <- parseString x
+  parseInputInner xs (ints ++ [int])
 
 splitOnSpaces :: String -> [String]
 splitOnSpaces string = split string ' '

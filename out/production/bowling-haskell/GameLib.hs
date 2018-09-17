@@ -37,3 +37,5 @@ lastFrameToGame frame = frame >>= \last -> Just $ Game Nothing last
 
 framesAndMaybeLastFrameToGame :: Frames -> Maybe LastFrame -> Maybe Game
 framesAndMaybeLastFrameToGame frames lastFrame = lastFrame >>= \last -> Just (Game (Just frames) last)
+--framesAndMaybeLastFrameToGame frames lastFrame = do
+--lastFrame >>= \last -> Just (Game (Just frames) last)

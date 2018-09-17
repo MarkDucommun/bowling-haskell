@@ -11,7 +11,9 @@ parseInput string = parseInputInner (splitOnSpaces string) []
 
 parseInputInner :: [String] -> [Int] -> Maybe [Int]
 parseInputInner [] ints = Just ints
-parseInputInner (x:xs) ints = parseString x >>= \int -> parseInputInner xs (ints ++ [int])
+parseInputInner (x:xs) ints = do
+  int <- parseString x
+  parseInputInner xs (ints ++ [int])
 
 splitOnSpaces :: String -> [String]
 splitOnSpaces string = split string ' '
@@ -28,13 +30,10 @@ splitInner _ [] array accumulator = array ++ [accumulator]
 
 parseString :: String -> Maybe Int
 parseString (x:[]) = parseChar x
-parseString (x:y:[]) =
-  applyMaybe
-    (parseChar x)
-    (\firstCharValue ->
-      applyMaybe
-        (parseChar y)
-        (\secondCharValue -> Just (firstCharValue * 10 + secondCharValue)))
+parseString (x:y:[]) = do
+  firstChar <- parseChar x
+  secondChar <- parseChar y
+  Just $ firstChar * 10 + secondChar
 parseString _ = Nothing
 
 parseChar :: Char -> Maybe Int
