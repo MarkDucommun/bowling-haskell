@@ -28,13 +28,7 @@ splitInner _ [] array accumulator = array ++ [accumulator]
 
 parseString :: String -> Maybe Int
 parseString (x:[]) = parseChar x
-parseString (x:y:[]) =
-  applyMaybe
-    (parseChar x)
-    (\firstCharValue ->
-      applyMaybe
-        (parseChar y)
-        (\secondCharValue -> Just (firstCharValue * 10 + secondCharValue)))
+parseString (x:y:[]) = parseChar x >>= \firstChar -> parseChar y >>= \secondChar -> Just $ firstChar * 10 + secondChar
 parseString _ = Nothing
 
 parseChar :: Char -> Maybe Int
