@@ -1,5 +1,5 @@
-module Maybe (aybe) where
+module Maybe where
 
-aybe :: Maybe a -> (a -> Maybe b) -> Maybe b
-aybe Nothing _ = Nothing
-aybe (Just a) fn = fn a
+applyMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
+applyMaybe Nothing _ = Nothing
+applyMaybe (Just a) fn = fn a
