@@ -33,3 +33,4 @@ constructLastFrame (x:y:[]) =
   if x + y < 10
   then Just $ LastFrame x y Nothing
   else Nothing
+constructLastFrame _ = Nothing

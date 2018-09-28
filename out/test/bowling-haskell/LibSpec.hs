@@ -31,4 +31,4 @@ spec = do
       score [-1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1] `shouldBe` Nothing
 
     it "rejects any frame with more than 10 total points" $ do
-      score [-1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1] `shouldBe` Nothing
+      score [9,2, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1] `shouldBe` Nothing

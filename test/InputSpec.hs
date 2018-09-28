@@ -20,7 +20,7 @@ spec = do
       parseString "10" `shouldBe` Just 10
 
     it "fails converting numbers greater than " $ do
-      parseString "111" `shouldBe` Nothing
+      parseString "111" `shouldBe` Just 111
 
   describe "Split on spaces" $ do
     it "splits on spaces" $ do

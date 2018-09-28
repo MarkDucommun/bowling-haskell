@@ -1,11 +1,13 @@
 module InputLib(
   parseInput
   , splitOnSpaces
+  , split
   , parseString
+  , join
 ) where
 
 parseInput :: String -> Maybe [Int]
-parseInput string = parseInputInner (splitOnSpaces string) []
+parseInput string = parseInputInner (split string ',') []
 
 parseInputInner :: [String] -> [Int] -> Maybe [Int]
 parseInputInner [] ints = Just ints
@@ -15,6 +17,12 @@ parseInputInner (x:xs) ints = do
 
 splitOnSpaces :: String -> [String]
 splitOnSpaces string = split string ' '
+
+join :: [String] -> String
+join array = inner array ""
+  where
+    inner [] accum = accum
+    inner (x:xs) accum = inner xs $ accum ++ x
 
 split :: String -> Char -> [String]
 split string char = splitInner char string [] ""
@@ -26,13 +34,22 @@ splitInner char (x:xs) array accumulator =
   else splitInner char xs array $ accumulator ++ [x]
 splitInner _ [] array accumulator = array ++ [accumulator]
 
+reverse' :: [a] -> [a]
+reverse' list = inner list []
+  where
+    inner [] result = result
+    inner (x:xs) result = inner xs ([x] ++ result)
+
 parseString :: String -> Maybe Int
-parseString (x:[]) = parseChar x
-parseString (x:y:[]) = do
-  firstChar <- parseChar x
-  secondChar <- parseChar y
-  Just $ firstChar * 10 + secondChar
-parseString _ = Nothing
+parseString string = parseStringInner (reverse' string) 1 0
+
+parseStringInner :: String -> Int -> Int -> Maybe Int
+parseStringInner [] _ result = Just result
+parseStringInner (' ':xs) multiplier result = parseStringInner xs multiplier result
+parseStringInner ('\r':xs) multiplier result = parseStringInner xs multiplier result
+parseStringInner (char:remaining) multiplier result = do
+  value <- parseChar char
+  parseStringInner remaining (10 * multiplier) (result + (value * multiplier))
 
 parseChar :: Char -> Maybe Int
 parseChar '0' = Just 0
