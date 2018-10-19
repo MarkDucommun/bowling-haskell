@@ -1,7 +1,7 @@
 module LibSpec (spec) where
 
 import Test.Hspec
-import Lib
+import BowlingLib
 
 spec :: Spec
 spec = do

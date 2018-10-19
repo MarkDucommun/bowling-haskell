@@ -1,6 +1,8 @@
 # bowling-haskell
 
-My first (arguably) non-trivial Haskell.  It scores a bowling game. This is probably stylistically terrible but over time as I learn more idiomatic Haskell I improve it.
+My first (arguably) non-trivial Haskell.  It scores a bowling game. This is probably stylistically terrible but over 
+time as I learn more idiomatic Haskell I improve it.  It can also be utilized via
+an untested, poorly functioning larval webserver also written in Haskell.
 
 ### How To Run
 

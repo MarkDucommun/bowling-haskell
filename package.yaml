@@ -1,10 +1,10 @@
 name:                bowling-haskell
 version:             0.1.0.0
-github:              "githubuser/bowling-haskell"
+github:              "MarkDucommun/bowling-haskell"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "Mark Ducommun"
+maintainer:          "ducommun.mark@gmail.com"
+copyright:           "2018 Mark Ducommun"
 
 extra-source-files:
 - README.md
@@ -17,25 +17,28 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/bowling-haskell#readme>
+description:         Please see the README on GitHub at <https://github.com/MarkDucommun/bowling-haskell#readme>
 
 dependencies:
 - base >= 4.7 && < 5
 
 library:
   source-dirs: src
+  dependencies:
+  - network
 
 executables:
-  bowling-haskell-exe:
+  bowling-server-exe:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         bowling-server
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -Werror
     dependencies:
     - bowling-haskell
-    - network
 
 tests:
   bowling-haskell-test:

@@ -7,7 +7,7 @@ module InputLib(
 ) where
 
 parseInput :: String -> Maybe [Int]
-parseInput string = parseInputInner (splitOnSpaces string) []
+parseInput string = parseInputInner (split string ',') []
 
 parseInputInner :: [String] -> [Int] -> Maybe [Int]
 parseInputInner [] ints = Just ints

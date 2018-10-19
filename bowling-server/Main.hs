@@ -5,7 +5,7 @@ import           Server
 import           ScoreBowlingGame
 
 main :: IO ()
-main = startServer (PortNumber 8080) [scoreBowlingGame, goodbyeName]
+main = startServer (PortNumber 8080) [scoreBowlingGame, goodbyeName, helloName]
 
 helloName :: RequestHandler
 helloName = GET "/hello" $ Impure respondHello
@@ -34,7 +34,6 @@ b = PUT "/b" handleB
   where
     handleB _ (Just body) = return $ OK $ Text body
     handleB _ _ = return $ OK $ Empty
-
 
 resetGame :: RequestHandler
 resetGame = GET "/reset" $ Impure (\_ -> return CREATED)

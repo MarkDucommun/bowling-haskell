@@ -1,22 +1,30 @@
-module RequestParser (
-  Request (GET, POST, PUT, DELETE)
+module RequestParser
+  ( Request(GET, POST, PUT, DELETE)
   , Param
   , Route
   , Body
   , parseRequest
   , getParam
-) where
+  ) where
 
-import InputLib
+import           InputLib
 
-data Request =
-  GET    Route (Maybe [Param]) |
-  POST   Route (Maybe Body)    |
-  PUT    Route (Maybe [Param]) (Maybe Body) |
-  DELETE Route (Maybe [Param]) deriving (Show, Eq)
+data Request
+  = GET Route
+        (Maybe [Param])
+  | POST Route
+         (Maybe Body)
+  | PUT Route
+        (Maybe [Param])
+        (Maybe Body)
+  | DELETE Route
+           (Maybe [Param])
+  deriving (Show, Eq)
 
 type Param = (String, String)
+
 type Route = String
+
 type Body = String
 
 getParam :: [Param] -> String -> Maybe String
@@ -34,12 +42,13 @@ parseRequest (line:theLines)
   | method == Just "DELETE" = parseDeleteRequest $ split line ' '
   | method == Nothing = parseRequest theLines
   | otherwise = parseRequest theLines
-  where method = getMethod line
+  where
+    method = getMethod line
 
 getMethod :: String -> Maybe String
 getMethod line =
   case split line ' ' of
-    [] -> Nothing
+    []    -> Nothing
     (x:_) -> Just x
 
 parseGetRequest :: [String] -> Maybe Request
@@ -71,16 +80,16 @@ parseDeleteRequest _ = Nothing
 parseRoute :: String -> Maybe Route
 parseRoute routeAndParams =
   case split routeAndParams '?' of
-    [] -> Nothing
+    []                      -> Nothing
     (('H':'T':'T':'P':_):_) -> Nothing
-    (x:_) -> Just $ x
+    (x:_)                   -> Just $ x
 
 parseParams :: String -> Maybe [Param]
 parseParams routeAndParams =
   case split routeAndParams '?' of
-    [] -> Nothing
+    []      -> Nothing
     (_:x:_) -> parseParamStrings (split x '&') []
-    _ -> Nothing
+    _       -> Nothing
 
 parseParamStrings :: [String] -> [Param] -> Maybe [Param]
 parseParamStrings [] params = Just params
@@ -89,11 +98,11 @@ parseParamStrings (x:xs) parsedParams = do
   parseParamStrings xs $ parsedParams ++ [param]
 
 parseParamString :: [String] -> Maybe Param
-parseParamString [] = Nothing
+parseParamString []       = Nothing
 parseParamString (x:y:[]) = Just $ (x, y)
-parseParamString _ = Nothing
+parseParamString _        = Nothing
 
 parseBody :: [String] -> Maybe Body
-parseBody [] = Nothing
-parseBody ("\r":body) = Just $ join body
+parseBody []            = Nothing
+parseBody ("\r":body)   = Just $ join body
 parseBody (_:remaining) = parseBody remaining
